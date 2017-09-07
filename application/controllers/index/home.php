@@ -20,15 +20,12 @@ class Home extends CI_Controller{
 	 * 默认首页显示方法
 	 */
 	public function index(){
-		// echo base_url() . 'style/index/';
-		// echo site_url() . '/index/home/category';
-
 		$data = $this->art->check();
 
 		$data['category'] = $this->category;
 
 		$data['title'] = $this->title;
-		$this->output->cache(5/60);
+//		$this->output->cache(5/60);
 		$this->load->view('index/home.html', $data);
 	}
 
